@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<link href='css/main.css' rel='stylesheet'>
+		<title>Converter</title>
+		<script>
+			const Converter = require('./js/converter.js')
+			const Editor = require('./js/editor.js')
+			const History = require('./js/history.js')
+			const About = require('./js/about.js')
+			const IFace = require('./js/iface.js')
+		</script>
+		<script src='./js/runtime.js'></script>
+	</head>
+	<body onload='init()'>
+		<div id='label'>
+			<span id='number'>0</span>
+			<span id='base'>10</span>
+		</div>
+		<div>
+			<input id='base-range' type='range'
+				min='2' max='16' value='10'>
+		</div>
+		<table id='numpad'>
+			<tr>
+				<td><button class='numkey'>B</button></td>
+				<td><button class='numkey'>C</button></td>
+				<td><button class='numkey'>D</button></td>
+				<td><button class='numkey'>E</button></td>
+				<td><button class='numkey'>F</button></td>
+			</tr>
+			<tr>
+				<td><button class='numkey'>6</button></td>
+				<td><button class='numkey'>7</button></td>
+				<td><button class='numkey'>8</button></td>
+				<td><button class='numkey'>9</button></td>
+				<td><button class='numkey'>A</button></td>
+			</tr>
+			<tr>
+				<td><button class='numkey'>1</button></td>
+				<td><button class='numkey'>2</button></td>
+				<td><button class='numkey'>3</button></td>
+				<td><button class='numkey'>4</button></td>
+				<td><button class='numkey'>5</button></td>
+			</tr>
+			<tr>
+				<td><button class='numkey'>0</button></td>
+				<td><button class='numkey'>.</button></td>
+				<td><button class='numkey'>-</button></td>
+				<td><button class='numkey'>BS</button></td>
+				<td><button class='numkey'>CE</button></td>
+			</tr>
+		</table>
+	</body>
+</html>
