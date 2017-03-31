@@ -14,43 +14,57 @@
 		<script src='./js/runtime.js'></script>
 	</head>
 	<body onload='init()'>
-		<div id='label'>
-			<span id='number'>0</span>
-			<span id='base'>10</span>
+		<div id='main' class='layout'>
+			<div id='label' class='scrollable'>
+				<!-- Damn, it's dirty. See css for .scrollable to get it. -->
+				<span id='base'>
+					<script>document.write(IFace.getBase())</script>
+				</span>
+				<span id='number'>
+					<script>document.write(IFace.getNumber())</script>
+				</span>
+				<span id='sign'></span>
+			</div>
+			<div>
+				<input id='base-range' type='range'
+					min='2' max='16' value='10'>
+			</div>
+			<table id='numpad'>
+				<tr>
+					<td><button class='numkey'>B</button></td>
+					<td><button class='numkey'>C</button></td>
+					<td><button class='numkey'>D</button></td>
+					<td><button class='numkey'>E</button></td>
+					<td><button class='numkey'>F</button></td>
+				</tr>
+				<tr>
+					<td><button class='numkey'>6</button></td>
+					<td><button class='numkey'>7</button></td>
+					<td><button class='numkey'>8</button></td>
+					<td><button class='numkey'>9</button></td>
+					<td><button class='numkey'>A</button></td>
+				</tr>
+				<tr>
+					<td><button class='numkey'>1</button></td>
+					<td><button class='numkey'>2</button></td>
+					<td><button class='numkey'>3</button></td>
+					<td><button class='numkey'>4</button></td>
+					<td><button class='numkey'>5</button></td>
+				</tr>
+				<tr>
+					<td><button class='numkey'>0</button></td>
+					<td><button class='numkey'>.</button></td>
+					<td><button class='numkey'>-</button></td>
+					<td><button class='numkey'>BS</button></td>
+					<td><button class='numkey'>CE</button></td>
+				</tr>
+			</table>
 		</div>
-		<div>
-			<input id='base-range' type='range'
-				min='2' max='16' value='10'>
+		<div id='history' class='layout hidden'></div>
+		<div id='about' class='layout hidden'>
+			<script>
+				document.write(About.print())
+			</script>
 		</div>
-		<table id='numpad'>
-			<tr>
-				<td><button class='numkey'>B</button></td>
-				<td><button class='numkey'>C</button></td>
-				<td><button class='numkey'>D</button></td>
-				<td><button class='numkey'>E</button></td>
-				<td><button class='numkey'>F</button></td>
-			</tr>
-			<tr>
-				<td><button class='numkey'>6</button></td>
-				<td><button class='numkey'>7</button></td>
-				<td><button class='numkey'>8</button></td>
-				<td><button class='numkey'>9</button></td>
-				<td><button class='numkey'>A</button></td>
-			</tr>
-			<tr>
-				<td><button class='numkey'>1</button></td>
-				<td><button class='numkey'>2</button></td>
-				<td><button class='numkey'>3</button></td>
-				<td><button class='numkey'>4</button></td>
-				<td><button class='numkey'>5</button></td>
-			</tr>
-			<tr>
-				<td><button class='numkey'>0</button></td>
-				<td><button class='numkey'>.</button></td>
-				<td><button class='numkey'>-</button></td>
-				<td><button class='numkey'>BS</button></td>
-				<td><button class='numkey'>CE</button></td>
-			</tr>
-		</table>
 	</body>
 </html>

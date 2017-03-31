@@ -29,7 +29,7 @@ body * {
 }
 
 #base-range {
-	min-width: 34.8rem;
+	min-width: 34.6rem;
 }
 
 .numkey {
@@ -54,4 +54,53 @@ body * {
 	opacity: 0.6;
     cursor: not-allowed;
 	pointer-events: none;
+}
+
+#label {
+	text-align: right;
+	width: 34.6rem;
+}
+
+.scrollable {
+	overflow-x: auto;
+	overflow-y: hidden;
+    white-space: nowrap;
+	direction: rtl;
+}
+
+.scrollable * {
+	direction: ltr;
+}
+
+.history {
+	font-size: 1.5rem;
+}
+
+#history {
+	margin: 1rem;
+}
+
+.history .sub {
+	font-size: 1.2rem;
+	vertical-align: sub;
+}
+
+.arrow {
+	padding: 0 1rem;
+}
+
+.hidden {
+	display: none;
+}
+
+#about-header {
+	font-family: monospace;
+	color: #4caf50;
+	font-size: 1rem;
+}
+
+#about * {
+	/*text-align: center;*/
+	margin: 1rem;
+	font-size: 2rem;
 }
