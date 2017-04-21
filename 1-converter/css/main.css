@@ -65,11 +65,11 @@ body * {
 	overflow-x: auto;
 	overflow-y: hidden;
     white-space: nowrap;
-	direction: rtl;
+	/*direction: rtl;*/
 }
 
 .scrollable * {
-	direction: ltr;
+	/*direction: ltr;*/
 }
 
 .history {
@@ -102,5 +102,5 @@ body * {
 #about * {
 	/*text-align: center;*/
 	margin: 1rem;
-	font-size: 2rem;
+	font-size: 1.2rem;
 }

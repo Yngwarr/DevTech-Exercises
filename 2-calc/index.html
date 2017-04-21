@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<link href='css/main.css' rel='stylesheet'>
+		<title>Calculator</title>
+		<script src='./js/runtime.js'></script>
+	</head>
+	<body onload='init()'>
+		<div id='main' class='layout'>
+			<div id='number' class='label'>
+				1|2
+			</div>
+			<table class='pad' id='numpad'>
+				<tr>
+					<td colspan='2'>
+						<button class='key ctrlkey wide'>BS</button>
+					</td>
+					<td colspan='2'>
+						<button class='key ctrlkey wide'>CE</button>
+					</td>
+					<td colspan='2'>
+						<button class='key ctrlkey wide'>C</button>
+					</td>
+				</tr>
+				<tr>
+					<td><button class='key memkey'>MC</button></td>
+					<td><button class='key numkey'>7</button></td>
+					<td><button class='key numkey'>8</button></td>
+					<td><button class='key numkey'>9</button></td>
+					<td><button class='key actkey'>+</button></td>
+					<td><button class='key actkey'>-</button></td>
+				</tr>
+				<tr>
+					<td><button class='key memkey'>MR</button></td>
+					<td><button class='key numkey'>4</button></td>
+					<td><button class='key numkey'>5</button></td>
+					<td><button class='key numkey'>6</button></td>
+					<td><button class='key actkey'>*</button></td>
+					<td><button class='key actkey'>/</button></td>
+				</tr>
+				<tr>
+					<td><button class='key memkey'>MS</button></td>
+					<td><button class='key numkey'>1</button></td>
+					<td><button class='key numkey'>2</button></td>
+					<td><button class='key numkey'>3</button></td>
+					<td><button class='key actkey'>^2</button></td>
+					<td><button class='key actkey'>1/x</button></td>
+				</tr>
+				<tr>
+					<td><button class='key memkey'>M+</button></td>
+					<td><button class='key numkey'>0</button></td>
+					<td><button class='key numkey'>+/-</button></td>
+					<td><button class='key numkey'>|</button></td>
+					<td colspan='2'>
+						<button class='key actkey wide'>=</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

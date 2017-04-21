@@ -34,8 +34,9 @@ this.keyCmd = function(cmd) {
 		Editor.clear();
 	} else if (cmd === '-') {
 		Editor.toggleSign();
+	} else if (cmd === '.') {
+		Editor.placeDelimiter();
 	}
-	// TODO delimiter
 }
 
 /**
@@ -90,7 +91,8 @@ this.convert = function(base) {
 		from = this.getBase(),
 		to = base,
 		sign = Editor.isNegative() ? '-' : '',
-		res = sign + Converter.convert(num, from, to);
+		// feel free to change accuracy (4th arg of convert)
+		res = sign + Converter.convert(num, from, to, 20);
 	Editor.setNumber(res);
 	History.add(num, from, res, to);
 	//console.log(Editor.nuber);

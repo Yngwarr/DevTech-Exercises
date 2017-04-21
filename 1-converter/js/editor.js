@@ -5,6 +5,7 @@ this.number = '';
 /** Base of current number. */
 this.base = 10;
 this.minus = false;
+this.delimiter = -1;
 
 /**
  * Get number.
@@ -12,7 +13,12 @@ this.minus = false;
  * @return {string} Number.
  */
 this.getNumber = function() {
-	if (this.isZero()) return '0';
+	if (this.isZero()) return '0' + (this.delimiter > -1 ? '.' : '');
+	if (this.delimiter != -1) {
+		var ipart = this.number.substr(0, this.delimiter);
+		return (ipart.length == 0 ? '0' : ipart)
+			+ '.' + this.number.substr(this.delimiter, 20);
+	}
 	return this.number;
 }
 
@@ -22,22 +28,23 @@ this.getNumber = function() {
  * @param {number} num - number.
  */
 this.setNumber = function(num) {
-	if (num === '0' || num === '-0') {
-		this.minus = false;
-		this.number = '';
-	} else if (num[0] === '-') {
+	var parts = num.split('.');
+	if (parts[0][0] == '-') {
 		this.minus = true;
-		this.number = num.substr(1, num.length);
+		parts[0] = parts[0].substr(1);
 	} else {
 		this.minus = false;
-		this.number = num;
 	}
+	if (parts[0] === '0') {
+		parts[0] = '';
+	}
+	this.number = parts.join('');
+	this.delimiter = parts[0].length;
 }
 
 /**
  * Check if current number is zero.
  */
-// TODO do something with floats
 this.isZero = function() {
 	if (this.number.length == 0) return true;
 	return false;
@@ -66,6 +73,9 @@ this.addDigit = function(dig) {
 		this.number += dig;
 }
 
+/**
+ * Toggles the sign of the number.
+ */
 this.toggleSign = function() {
 	if (this.isZero()) return;
 	this.minus = this.minus ? false : true;
@@ -75,6 +85,10 @@ this.toggleSign = function() {
  * Remove the last digit of current number.
  */
 this.backspace = function() {
+	if (this.delimiter == this.number.length) {
+		this.delimiter = -1;
+		return;
+	}
 	if (this.isZero()) return;
 	this.number = this.number.substr(0, this.number.length - 1);
 }
@@ -84,4 +98,14 @@ this.backspace = function() {
  */
 this.clear = function() {
 	this.number = '';
+	this.minus = false;
+	this.delimiter = -1;
+}
+
+/**
+ * Places delimiter at the end of the number.
+ */
+this.placeDelimiter = function() {
+	if (this.delimiter != -1) return;
+	this.delimiter = this.number.length;
 }

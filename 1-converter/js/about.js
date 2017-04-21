@@ -8,12 +8,13 @@ this.header = function() {
 		.join('\n');
 }
 
-this.programName = 'Конвертер';
-this.author = 'Кислицын Игорь, ПМИ-41';
-this.year = '2017';
+this.programName = /*ru*/'Конвертер'/*ur*/;
+this.author = /*ru*/'Кислицын Игорь, ПМИ-41'/*ur*/;
 
 this.print = function() {
 	return ['<pre id="about-header">' + this.header() + '</pre>',
 			'<p>' + this.programName + '</p>',
-			'<p>Автор: ' + this.author + '</p>'].join('');
+			/*ru*/'<p>Автор: '/*ur*/ + this.author + '</p><br />',
+			/*ru*/'<p>Для ввода числа используйте экранную или физическую клавиатуру.</p>',/*ur*/
+			/*ru*/'<p>Для конвертации измените основание системы счисления с помощью ползунка.</p>'/*ur*/].join('');
 }

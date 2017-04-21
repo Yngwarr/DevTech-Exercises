@@ -16,14 +16,13 @@
 	<body onload='init()'>
 		<div id='main' class='layout'>
 			<div id='label' class='scrollable'>
-				<!-- Damn, it's dirty. See css for .scrollable to get it. -->
-				<span id='base'>
-					<script>document.write(IFace.getBase())</script>
-				</span>
+				<span id='sign'></span>
 				<span id='number'>
 					<script>document.write(IFace.getNumber())</script>
 				</span>
-				<span id='sign'></span>
+				<span id='base'>
+					<script>document.write(IFace.getBase())</script>
+				</span>
 			</div>
 			<div>
 				<input id='base-range' type='range'

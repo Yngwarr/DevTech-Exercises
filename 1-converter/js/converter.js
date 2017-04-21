@@ -5,11 +5,17 @@
  * 
  * @param {string} num - Number.
  * @param {number} base - Base of num (from 2 to 16).
+ * @param {number} accuracy - Number of digits after delimiter.
  * @return {number} Given number in decimal format
  */
-// TODO add floating point support
-this.toDec = function(num, base) {
-	return Number.parseInt(num, base);
+this.toDec = function(num, base, accuracy) {
+	var parts = num.split('.');
+	if (parts.length > 1 && parts[1] !== '') {
+		return Number.parseInt(parts[0], base)
+			+ Number.parseInt(parts[1].substr(0,accuracy), base)
+			/ Math.pow(base, parts[1].length);
+	}
+	return Number.parseInt(parts[0], base);
 }
 
 /**
@@ -29,10 +35,11 @@ this.fromDec = function(num, base) {
  * @param {string} num - A number to convert.
  * @param {number} from - A base of the system to convert from.
  * @param {number} to - A base of the system to convert to.
+ * @param {number} accuracy - Number of digits after delimiter.
  * @return {string} Given number in from-based system.
  */
-this.convert = function(num, from, to) {
-	return this.fromDec(this.toDec(num, from), to);
+this.convert = function(num, from, to, accuracy) {
+	return this.fromDec(this.toDec(num, from, accuracy), to);
 }
 
 /**
