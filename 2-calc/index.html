@@ -4,12 +4,23 @@
 		<meta charset='utf-8'>
 		<link href='css/main.css' rel='stylesheet'>
 		<title>Calculator</title>
-		<script src='./js/runtime.js'></script>
+		<script src='./js/number.js'></script>
+		<script>
+			const Editor = require('./js/editor.js');
+			const Memory = require('./js/memory.js');
+			const Processor = require('./js/processor.js');
+			const Controller = require('./js/controller.js');
+		</script>
+		<script src='./js/iface.js'></script>
 	</head>
 	<body onload='init()'>
 		<div id='main' class='layout'>
-			<div id='number' class='label'>
-				1|2
+			<div class='label'>
+				<span id='indicators'>
+					<span id='mem' class='hidden'>M</span>
+					<span id='op'></span>
+				</span>
+				<span id='number'>0</span>
 			</div>
 			<table class='pad' id='numpad'>
 				<tr>

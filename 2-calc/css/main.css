@@ -15,7 +15,7 @@ body * {
 }
 
 .label {
-	margin: 1rem 0;
+	margin: 0.5rem 0;
 	font-size: 3rem;
 	font-weight: bolder;
 	text-align: right;
@@ -45,6 +45,9 @@ body * {
 .memkey:hover { background-color: #000; color: #5f4c99; }
 .ctrlkey { background-color: #de6461; color: #000; }
 .ctrlkey:hover { background-color: #000; color: #de6461; }
+
+#indicators { float: left; }
+#number { float: right; }
 
 .disabled {
 	opacity: 0.6;
